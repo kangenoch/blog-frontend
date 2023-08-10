@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
   return (
@@ -67,6 +67,14 @@ function Content() {
       setPosts(response.data);
     });
   };
+
+  //useEffect(handleIndexPosts, []);
+
+  useEffect(() => {
+    document.title = `Vite + React: ${posts.length} posts`;
+    handleIndexPosts();
+  }, []);
+
   return (
     <div>
       <PostsNew />
