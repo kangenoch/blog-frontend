@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { PostsNew } from "./PostsNew";
 import { PostIndex } from "./PostIndex";
+import { Modal } from "./Modal";
 
 export function Content() {
   //let posts = [];
@@ -25,6 +26,10 @@ export function Content() {
       <PostsNew />
       <button onClick={handleIndexPosts}>Load DB</button>
       <PostIndex posts={posts} />
+
+      <Modal show={true}>
+        <p>TEST</p>
+      </Modal>
     </div>
   );
 }
