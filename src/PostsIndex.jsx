@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export function PostIndex(props) {
+export function PostsIndex(props) {
   console.log(props);
   return (
     <div id="posts-index">

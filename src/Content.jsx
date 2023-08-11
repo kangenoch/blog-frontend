@@ -1,9 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { PostsNew } from "./PostsNew";
-import { PostIndex } from "./PostIndex";
+import { PostsIndex } from "./PostsIndex";
 import { Modal } from "./Modal";
+import { PostsShow } from "./PostsShow";
 
 export function Content() {
   //let posts = [];
@@ -38,11 +40,10 @@ export function Content() {
     <div>
       <PostsNew />
       <button onClick={handleIndexPosts}>Load DB</button>
-      <PostIndex posts={posts} onShowPost={handleShowPost} />
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
 
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <h2>Title: {currentPost.title}</h2>
-        <p>{currentPost.updated_at}</p>
+        <PostsShow post={currentPost} />
       </Modal>
     </div>
   );
