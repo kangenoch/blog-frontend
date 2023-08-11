@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { PostsNew } from "./PostsNew";
@@ -16,8 +17,9 @@ export function Content() {
     });
   };
 
-  const handleShowPost = () => {
+  const handleShowPost = (post) => {
     setIsPostsShowVisible(true);
+    setCurrentPost(post);
   };
 
   const handleClose = () => {
@@ -30,6 +32,8 @@ export function Content() {
     handleIndexPosts();
   }, []);
 
+  const [currentPost, setCurrentPost] = useState({});
+
   return (
     <div>
       <PostsNew />
@@ -37,7 +41,8 @@ export function Content() {
       <PostIndex posts={posts} onShowPost={handleShowPost} />
 
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <p>TEST</p>
+        <h2>Title: {currentPost.title}</h2>
+        <p>{currentPost.updated_at}</p>
       </Modal>
     </div>
   );
