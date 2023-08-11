@@ -37,7 +37,7 @@ export function Content() {
   const [currentPost, setCurrentPost] = useState({});
 
   return (
-    <div>
+    <div className="container">
       <PostsNew />
       <button onClick={handleIndexPosts}>Load DB</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
