@@ -6,6 +6,7 @@ import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
+import { Signup } from "./Signup";
 
 export function Content() {
   //let posts = [];
@@ -38,6 +39,7 @@ export function Content() {
 
   return (
     <div className="container">
+      <Signup />
       <PostsNew />
       <button onClick={handleIndexPosts}>Load DB</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
