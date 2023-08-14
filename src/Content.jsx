@@ -41,11 +41,17 @@ export function Content() {
   return (
     <div className="container">
       <Login />
+      <p></p>
+      ----------------------------------
       <Signup />
+      <p></p>
+      ----------------------------------
       <PostsNew />
+      <p></p>
+      ----------------------------------
+      <br />
       <button onClick={handleIndexPosts}>Load DB</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
-
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
       </Modal>
