@@ -10,6 +10,7 @@ export function LogoutLink() {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
+    localStorage.removeItem("email");
     window.location.href = "/";
   };
 
@@ -18,7 +19,7 @@ export function LogoutLink() {
       <h1>Logout</h1>
 
       <form onSubmit={handleClick}>
-        <ul>{jwt}</ul>
+        <p>{localStorage.getItem("email")}</p>
         <button type="submit">Logout</button>
       </form>
     </div>
