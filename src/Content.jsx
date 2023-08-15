@@ -30,6 +30,29 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
+  const handleCreatePost = (params) => {
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      setPosts([...posts, response.data]);
+    });
+  };
+
+  const handleUpdatePost = (id, params) => {
+    axios
+      .patch(`http://localhost:3000/posts/${id}.json`, params)
+      .then((response) => {
+        setPosts(
+          posts.map((post) => {
+            if (post.id === response.data.id) {
+              return response.data;
+            } else {
+              return post;
+            }
+          })
+        );
+      })
+      .then(handleClose);
+  };
+
   //useEffect(handleIndexPosts, []);
   useEffect(() => {
     document.title = `Vite + React: ${posts.length} posts`;
@@ -46,7 +69,7 @@ export function Content() {
       <Signup />
       <p></p>
       ----------------------------------
-      <PostsNew />
+      <PostsNew onCreatePost={handleCreatePost} />
       <p></p>
       ----------------------------------
       <br />

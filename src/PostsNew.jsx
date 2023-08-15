@@ -1,13 +1,22 @@
-export function PostsNew() {
+/* eslint-disable react/prop-types */
+export function PostsNew(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("handleSubmit");
+    const params = new FormData(event.target);
+    props.onCreatePost(params);
+    event.target.reset();
+  };
+
   return (
     <div id="posts-new">
       <h1>New Post</h1>
-      <form action="#" method="post">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
-        <input type="text" id="title" name="title" />
+        <input type="text" name="title" />
         <br></br>
         <label htmlFor="body">Body:</label>
-        <textarea id="body" name="body" rows="5" />
+        <input type="text" name="body" />
         <br></br>
         <label htmlFor="Image">Image:</label>
         <input type="text" id="image" name="image" />
