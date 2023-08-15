@@ -8,6 +8,7 @@ import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   //let posts = [];
@@ -72,6 +73,9 @@ export function Content() {
   return (
     <div className="container">
       <Login />
+      <p></p>
+      ----------------------------------
+      <LogoutLink />
       <p></p>
       ----------------------------------
       <Signup />
