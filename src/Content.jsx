@@ -53,6 +53,14 @@ export function Content() {
       .then(handleClose);
   };
 
+  const handleDestroyPost = (post) => {
+    console.log("handleDestroyPost", post);
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+      setPosts(posts.filter((p) => p.id !== post.id));
+      handleClose();
+    });
+  };
+
   //useEffect(handleIndexPosts, []);
   useEffect(() => {
     document.title = `Vite + React: ${posts.length} posts`;
@@ -76,7 +84,7 @@ export function Content() {
       <button onClick={handleIndexPosts}>Load DB</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
     </div>
   );

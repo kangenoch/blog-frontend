@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 export function PostsShow(props) {
@@ -6,6 +7,14 @@ export function PostsShow(props) {
     const params = new FormData(event.target);
     console.log("handleSubmit", params);
     props.onUpdatePost(props.post.id, params);
+    event.target.reset();
+  };
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    console.log("handleClick", params);
+    props.onDestroyPost(props.post);
     event.target.reset();
   };
 
@@ -26,6 +35,11 @@ export function PostsShow(props) {
         <input type="text" defaultValue={props.post.image} name="image" />
         <br></br>
         <button type="submit">Update</button>
+      </form>
+      <p></p>
+      <h2>Delete Post</h2>
+      <form onSubmit={handleClick}>
+        <button type="submit">Delete</button>
       </form>
     </div>
   );
