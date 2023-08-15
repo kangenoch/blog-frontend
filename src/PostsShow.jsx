@@ -5,7 +5,7 @@ export function PostsShow(props) {
     event.preventDefault();
     const params = new FormData(event.target);
     console.log("handleSubmit", params);
-    props.onUpdateRecipe(props.post.id, params);
+    props.onUpdatePost(props.post.id, params);
     event.target.reset();
   };
 
