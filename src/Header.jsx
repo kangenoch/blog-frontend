@@ -1,7 +1,22 @@
 /* eslint-disable react/no-unknown-property */
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Signup } from "./Signup";
+import { Modal } from "./Modal";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
+
+  const handleSignupShow = () => {
+    setIsSignupVisible(true);
+  };
+
+  const handleSignupClose = () => {
+    setIsSignupVisible(false);
+  };
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -37,9 +52,19 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link to="/signup" className="nav-link">
+                  Signup
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/login" className="nav-link">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/logout" className="nav-link">
+                  Logout
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -53,14 +78,17 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#posts-index">
+                    <Link to="/" className="dropdown-item">
                       All Posts
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#posts-new">
+                    {/* <a className="dropdown-item" href="#posts-new">
                       New Post
-                    </a>
+                    </a> */}
+                    <Link to="/posts/new" className="dropdown-item">
+                      New Post
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
