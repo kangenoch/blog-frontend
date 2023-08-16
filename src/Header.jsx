@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unknown-property */
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <header>
@@ -24,6 +26,12 @@ export function Header() {
                 <a className="nav-link active" aria-current="page" href="#">
                   Home
                 </a>
+              </li>
+              <li className="nav-item">
+                {/* <a className="nav-link active" aria-current="page" href="#">
+                  About
+                </a> */}
+                <Link to="/about">About</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

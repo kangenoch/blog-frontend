@@ -2,6 +2,10 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState, useEffect } from "react";
+
+import { Routes, Route } from "react-router-dom";
+import { About } from "./About";
+
 import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { Modal } from "./Modal";
@@ -72,6 +76,9 @@ export function Content() {
 
   return (
     <div className="container">
+      <Routes>
+        <Route path="/about/" element={<About />} />
+      </Routes>
       <Login />
       <p></p>
       ----------------------------------
