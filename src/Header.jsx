@@ -47,25 +47,11 @@ export function Header() {
                   About
                 </a> */}
 
-                <Link to="/about" className="nav-link">
+                <Link to="/about" className="nav-link active">
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  Signup
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/logout" className="nav-link">
-                  Logout
-                </Link>
-              </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -93,10 +79,20 @@ export function Header() {
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                  <li className="nav-item">
+                    <Link to="/signup" className="dropdown-item">
+                      Signup
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/login" className="dropdown-item">
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/logout" className="dropdown-item">
+                      Logout
+                    </Link>
                   </li>
                 </ul>
               </li>
