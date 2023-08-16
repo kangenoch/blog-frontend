@@ -11,11 +11,7 @@ export function PostsShow(props) {
   };
 
   const handleClick = (event) => {
-    event.preventDefault();
-    const params = new FormData(event.target);
-    console.log("handleClick", params);
     props.onDestroyPost(props.post);
-    event.target.reset();
   };
 
   return (
@@ -38,7 +34,7 @@ export function PostsShow(props) {
       </form>
       <p></p>
       <h2>Delete Post</h2>
-      <form onSubmit={handleClick}>
+      <form onClick={handleClick}>
         <button type="submit">Delete</button>
       </form>
     </div>

@@ -18,6 +18,7 @@ export function Content() {
   //let posts = [];
   const [posts, setPosts] = useState([]);
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+  const [currentPost, setCurrentPost] = useState({});
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
@@ -68,11 +69,9 @@ export function Content() {
 
   //useEffect(handleIndexPosts, []);
   useEffect(() => {
-    document.title = `Vite + React: ${posts.length} posts`;
+    // document.title = `Vite + React: ${posts.length} posts`;
     handleIndexPosts();
   }, []);
-
-  const [currentPost, setCurrentPost] = useState({});
 
   return (
     <div className="container">
