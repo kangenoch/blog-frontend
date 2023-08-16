@@ -31,7 +31,10 @@ export function Header() {
                 {/* <a className="nav-link active" aria-current="page" href="#">
                   About
                 </a> */}
-                <Link to="/about">About</Link>
+
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
