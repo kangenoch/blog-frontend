@@ -30,16 +30,18 @@ export function Signup() {
       <form onSubmit={handleSubmit}>
         {status ? <img src={`http://httpstatusdogs.com/img/${status}.jpg`} width="350" /> : null}
         <br />
-        Name: <input type="text" name="name" value={name} onChange={(event) => setName(event.target.value)} />
+        Name:&#9;&nbsp;&#9;&nbsp;{" "}
+        <input type="text" name="name" value={name} onChange={(event) => setName(event.target.value)} />
         <br />
         <small>{20 - name.length} characters remaining</small>
         <br />
-        Email: <input type="email" name="email" />
+        Email: &#9;&nbsp;&#9;&nbsp;
+        <input type="email" name="email" />
         <br />
-        Password:
+        Password:&#9;&nbsp;
         <input type="password" name="password" />
         <br />
-        Password Confirmation:
+        Password Confirmation:&#9;&nbsp;
         <input type="password" name="password_confirmation" />
         <br />
         <button type="submit">Submit</button>
