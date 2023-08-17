@@ -92,25 +92,30 @@ export function Header() {
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
-                  <li className="nav-item">
-                    <Link to="/signup" className="dropdown-item">
-                      Signup
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/login" className="dropdown-item">
-                      Login
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/logout" className="dropdown-item">
-                      Logout
-                    </Link>
-                  </li>
+                  {localStorage.jwt === undefined ? (
+                    <>
+                      <li className="nav-item">
+                        <Link to="/signup" className="dropdown-item">
+                          Signup
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/login" className="dropdown-item">
+                          Login
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li className="dropdown-item">Hello! {localStorage.email}</li>
+                      <li className="nav-item">
+                        <Link to="/logout" className="dropdown-item">
+                          Logout
+                        </Link>
+                      </li>
+                    </>
+                  )}
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
             <form className="d-flex" role="search">
