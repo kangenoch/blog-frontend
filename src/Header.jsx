@@ -30,7 +30,9 @@ export function Header() {
           {/* <a className="navbar-brand" href="/">
             BlogF
           </a> */}
+
           <Link to="/" className="navbar-brand">
+            <img src="https://cdn-icons-png.flaticon.com/512/8708/8708467.png" height="40" />
             BlogF
           </Link>
           <button

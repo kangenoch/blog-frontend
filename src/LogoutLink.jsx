@@ -19,7 +19,11 @@ export function LogoutLink() {
       <h1>Logout</h1>
 
       <form onSubmit={handleClick}>
-        <p>{localStorage.getItem("email")}</p>
+        <p>
+          <img src="https://i.pinimg.com/736x/d5/89/ff/d589ffcf1cf7a41d3271fb4783360052.jpg" width="350" />
+        </p>
+        <p>Hello! {localStorage.getItem("email")}</p>
+        <p>Are you sure?</p>
         <button type="submit">Logout</button>
       </form>
     </div>
