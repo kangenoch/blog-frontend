@@ -13,7 +13,7 @@ export function About() {
         </Map>
       </p>
       <p>
-        <ReactPlayer url="https://streamable.com/moo" loop={true} width="300" />
+        <ReactPlayer url="https://streamable.com/ifjh" loop={true} width="300" />
       </p>
     </div>
   );
